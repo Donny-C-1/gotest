@@ -15,7 +15,7 @@ func main() {
 		port = "80"
 	}
 
-	router.Run(":" + port)
+	router.Run(":" + "80")
 }
 
 func homePage(c *gin.Context) {
