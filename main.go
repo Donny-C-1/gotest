@@ -1,12 +1,18 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	"os"
+
+	"github.com/gin-gonic/gin"
+)
 
 func main() {
 	router := gin.Default()
 	router.GET("/", homePage)
 
-	router.Run(":" + "80")
+	port := os.Getenv("PORT")
+
+	router.Run(":" + port)
 }
 
 func homePage(c *gin.Context) {
