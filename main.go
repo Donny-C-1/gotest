@@ -11,6 +11,9 @@ func main() {
 	router.GET("/", homePage)
 
 	port := os.Getenv("PORT")
+	if port == "" {
+		port = "80"
+	}
 
 	router.Run(":" + port)
 }
